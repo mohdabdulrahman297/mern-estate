@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react'
 import {getDownloadURL, getStorage, ref, uploadBytesResumable} from 'firebase/storage';
 import {app} from '../firebase';
@@ -162,6 +163,9 @@ export default function CreateListing() {
 
 
 
+
+
+
   return (
     <main className='p-3 max-w-4xl mx-auto'>
       <h1 className='text-3xl font-semibold text-center my-7'>Update a Listing</h1>
@@ -237,7 +241,7 @@ export default function CreateListing() {
               </div>
             ))
           }
-          <button disabled={loading || uploading} className='p-3 bg-slate-700 text-white rounded-lg uppercase hover:opacity-95 disabled:opacity-80'>{loading ? 'Creating...' : 'Update listing'}</button>
+          <button disabled={loading || uploading} className='p-3 bg-slate-700 text-white rounded-lg uppercase hover:opacity-95 disabled:opacity-80'>{loading ? 'Updating...' : 'Update listing'}</button>
           {error && <p className='text-red-700 text-sm'>{error}</p>}
         </div>
         
@@ -245,3 +249,4 @@ export default function CreateListing() {
     </main>
   )
 }
+
