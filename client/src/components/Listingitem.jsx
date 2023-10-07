@@ -7,7 +7,8 @@ export default function ListingItem({ listing }) {
       <Link to={`/listing/${listing._id}`}>
         <img
           src={
-            listing.imageUrls[0] || "https://www.google.com/imgres?imgurl=https%3A%2F%2Fwww.indiafilings.com%2Flearn%2Fwp-content%2Fuploads%2F2015%2F10%2FReal-Estate-Agent-Business-India.jpg&tbnid=w_jxwHAbbeouyM&vet=12ahUKEwjGq5y4k-OBAxUp4qACHWz8DnMQMygFegQIARB4..i&imgrefurl=https%3A%2F%2Fwww.indiafilings.com%2Flearn%2Fhow-to-start-real-estate-business%2F&docid=JyMqM_srT9S47M&w=1000&h=667&q=real%20estate&ved=2ahUKEwjGq5y4k-OBAxUp4qACHWz8DnMQMygFegQIARB4"
+            listing.imageUrls[0] ||
+            'https://53.fs1.hubspotusercontent-na1.net/hub/53/hubfs/Sales_Blog/real-estate-business-compressor.jpg?width=595&height=400&name=real-estate-business-compressor.jpg'
           }
           alt='listing cover'
           className='h-[320px] sm:h-[220px] w-full object-cover hover:scale-105 transition-scale duration-300'
@@ -25,17 +26,23 @@ export default function ListingItem({ listing }) {
           <p className='text-sm text-gray-600 line-clamp-2'>
             {listing.description}
           </p>
-          <p className='text-slate-500 mt-2 font-semibold flex items-center'>
+          <p className='text-slate-500 mt-2 font-semibold '>
             $
-            {listing.offer ? listing.discountPrice.toLocaleString('en-US') : listing.regularPrice.toLocaleString('en-US')}
+            {listing.offer
+              ? listing.discountPrice.toLocaleString('en-US')
+              : listing.regularPrice.toLocaleString('en-US')}
             {listing.type === 'rent' && ' / month'}
           </p>
           <div className='text-slate-700 flex gap-4'>
             <div className='font-bold text-xs'>
-                {listing.bedrooms > 1 ? `${listing.bedrooms} beds` : `${listing.bedrooms} bed`}
+              {listing.bedrooms > 1
+                ? `${listing.bedrooms} beds `
+                : `${listing.bedrooms} bed `}
             </div>
             <div className='font-bold text-xs'>
-                {listing.bathrooms > 1 ? `${listing.bathrooms} baths` : `${listing.bathrooms} bath`}
+              {listing.bathrooms > 1
+                ? `${listing.bathrooms} baths `
+                : `${listing.bathrooms} bath `}
             </div>
           </div>
         </div>
